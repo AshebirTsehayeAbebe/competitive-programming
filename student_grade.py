@@ -7,6 +7,6 @@ def gradingStudents(grades):
         
     return grades
 n = int(input("Enter number of grades : "))   
-grades = list(map(int,input("\nEnter the numbers : ").strip().split()))[:n] 
+grades = list(map(int,input("\nEnter the numbers : ").strip().split()))[:n]
 output = gradingStudents(grades)
 print(output)
