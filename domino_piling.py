@@ -1,7 +1,12 @@
-def DominoPiling(m,n):
- print(m*n//2)
+from inspect import _void
+
+
+class Solution:
+ def dominoPiling(self, m,n)->_void:
+  print(m*n//2)
  
-n = int(input("Enter width : "))
-m = int(input("Enter height : "))
-DominoPiling(m,n)
+obj = Solution()
+n = int(input("Enter your value: "))
+m = int(input("Enter your value: "))
+obj.dominoPiling(m,n)
     
