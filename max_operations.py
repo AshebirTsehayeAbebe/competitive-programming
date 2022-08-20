@@ -1,20 +1,26 @@
-def maxOperations(nums, k):
-        checkFinished, resetNums, originalNumsLength=False,False, len(nums) 
-        while len(nums)>0 and checkFinished!=True:
-            resetNums=False
-            for i in range(len(nums)):
-                for j in range(i+1,len(nums)):
-                    if nums[i]+nums[j]==k:
-                        nums.remove(nums[j])
-                        nums.remove(nums[i])                      
-                        resetNums = True
-                        break
-                if resetNums:
-                    break
-                if i==len(nums):
-                    checkFinished=True
-            if checkFinished:
-                break
-        print(nums)
-        return  (originalNumsLength-len(nums))//2 
-print(maxOperations([1,2,3,4], 6))
+from typing import List
+class Solution:
+    def maxOperations(self, nums: List[int], k: int) -> int:
+        
+            dictionary={}
+            answer=0
+            for index, item in enumerate(nums):
+                difference=k-item
+                if difference in dictionary and dictionary[difference]>0:
+                    answer+=1
+                    dictionary[difference]-=1
+                else:
+                    if item not in dictionary:
+                        dictionary[item]=0
+                    dictionary[item]+=1
+                    
+                    
+            return  answer
+
+obj=Solution()
+n=int(input('Enter array size: '))
+nums = list(map(int,input('Enter array elements: ').strip().split()[:n]))
+
+k=int(input('Enter the target number: '))
+
+print(obj.maxOperations(nums, k))
