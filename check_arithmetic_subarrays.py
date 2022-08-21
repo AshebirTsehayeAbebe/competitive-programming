@@ -27,7 +27,6 @@ nums = list(map(int, input('Enter array elements: ').strip().split()[:n]))
 m = int(input('Enter size of range queries: '))
 l = list(map(int, input('Enter first range query: ').strip().split()[:m]))
 r = list(map(int, input('Enter second range query: ').strip().split()[:m]))
-#[4,6,5,9,3,7], [0,0,2], [2,3,5]
 print(obj.checkArithmeticSubarrays(nums, l, r))
 
 
