@@ -17,3 +17,8 @@ class Solution:
             return True
         else:
             return False
+obj= Solution()
+s=int(input('Enter the string: '))
+print(obj.isValid(s))
+
+
